@@ -1,4 +1,4 @@
-APP=$(shell basename $(shell git remote get-url origin))
+APP=$(shell basename $(shell git remote get-url origin))/Week-3/kbot
 REGESTRY=sky-tech-bv
 VERSION=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HEAD)
 TARGETOS=linux
@@ -25,5 +25,7 @@ image:
 push:
 	docker push ${REGESTRY}/${APP}:${VERSION}-${TARGETARCH}
 
-clean:
+clean: image
 	rm -rf kbot
+	docker rm -vf $(docker ps -aq)
+	docker rmi -f $(docker images -aq)
