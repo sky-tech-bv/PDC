@@ -1,8 +1,8 @@
 APP=$(shell basename $(shell git remote get-url origin))
 REGESTRY=sky-tech-bv
-VERSION=$(shell git describe --tags --always --abbrev=0)-$(shell git rev-parse --short HEAD)
+VERSION=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HEAD)
 TARGETOS=linux
-TARGETARCH=arm64
+TARGETARCH=amd64
 
 format: 
 	gofmt -s -w ./
