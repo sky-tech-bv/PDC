@@ -1,4 +1,4 @@
-module github.com/sky-tech-bv/PDC/Week-2/kbot
+module github.com/sky-tech-bv/PDC/Week-3/kbot
 
 go 1.21.3
 
